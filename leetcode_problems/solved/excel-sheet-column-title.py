@@ -1,4 +1,5 @@
 import string
+import math
 
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
@@ -8,13 +9,12 @@ class Solution:
                      21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y', 26: 'Z'}
         colName = ""
         
-        # if columnNumber<26:
-        #     return letterMap[columnNumber]
-        
         while columnNumber!=0:
         
-            quotient = int(columnNumber / 26)
+            quotient = math.floor(columnNumber / 26)
             remainder = columnNumber % 26
+            if remainder==0:
+                quotient -= 1
             columnNumber = quotient
             colName = letterMap[remainder] + colName 
             
@@ -30,3 +30,6 @@ print(677, sol1.convertToTitle(677))
 print(1371, sol1.convertToTitle(1371))
 print(676, sol1.convertToTitle(676))
 print(18277, sol1.convertToTitle(18277))
+
+#time - O(log of n to base 26)
+#space = O(1)
