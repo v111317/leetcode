@@ -1,14 +1,21 @@
 class Solution:
+    
+    stepsMap = {}
+    
     def climbStairs(self, n: int) -> int:
-        print(n)
         
-        if n in [1, 0]:
-            return n
+        if n in [0, 1]:
+            return 1
         
-        countWithFirstStep1 = (1 + self.climbStairs(n-1)) if n-1 > 0 else 0 
-        countWithFirstStep2 = (1 + self.climbStairs(n-2)) if n-2 > 0 else 0
-        
-        return countWithFirstStep1 + countWithFirstStep2
+        if n >= 2:
+            return self.climbStairs(n-1) + self.climbStairs(n-2)
+        else:
+            return self.climbStairs(n-1)
     
 sol1 = Solution()
-print(sol1.climbStairs(3))
+print(sol1.climbStairs(5))
+print(sol1.climbStairs(44))
+
+#time - O()
+#space - O(1)
+#tle
