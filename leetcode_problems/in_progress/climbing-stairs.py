@@ -1,16 +1,19 @@
 class Solution:
     
+    global stepsMap
     stepsMap = {}
     
     def climbStairs(self, n: int) -> int:
         
-        if n in [0, 1]:
-            return 1
+        print(n)
+        if n <= 2:
+            return n
         
-        if n >= 2:
-            return self.climbStairs(n-1) + self.climbStairs(n-2)
-        else:
-            return self.climbStairs(n-1)
+        if n in stepsMap:
+            return stepsMap[n]
+        print(n-1, n-2)
+        stepsMap[n] =  self.climbStairs(n-1) + self.climbStairs(n-2)
+        
     
 sol1 = Solution()
 print(sol1.climbStairs(5))
