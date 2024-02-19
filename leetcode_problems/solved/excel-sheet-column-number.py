@@ -1,3 +1,8 @@
+#https://leetcode.com/problems/excel-sheet-column-number/description/
+
+#Given a string columnTitle that represents the column title as appears 
+# in an Excel sheet, return its corresponding column number.
+
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
         letterMap = {
@@ -16,19 +21,18 @@ class Solution:
             j += 1
         
         return colNum
-            
     
         
 sol1 = Solution()
-print("AB", sol1.titleToNumber("AB"))
-print("L", sol1.titleToNumber("L"))
-print("CVA", sol1.titleToNumber("CVA"))
-print("A", sol1.titleToNumber("A"))
-print("ZY", sol1.titleToNumber("ZY"))
-print("ZA", sol1.titleToNumber("ZA"))
-print("AZS", sol1.titleToNumber("AZS"))
-print("YZ", sol1.titleToNumber("YZ"))
-print("ZZY", sol1.titleToNumber("ZZY"))
+print("AB", sol1.titleToNumber2("AB"))
+#print("L", sol1.titleToNumber2("L"))
+# print("CVA", sol1.titleToNumber("CVA"))
+# print("A", sol1.titleToNumber("A"))
+# print("ZY", sol1.titleToNumber("ZY"))
+# print("ZA", sol1.titleToNumber("ZA"))
+# print("AZS", sol1.titleToNumber("AZS"))
+# print("YZ", sol1.titleToNumber("YZ"))
+# print("ZZY", sol1.titleToNumber("ZZY"))
 # 12 L
 # 2601 CVA
 # 28 AB
