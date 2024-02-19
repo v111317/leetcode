@@ -7,7 +7,7 @@ class Solution:
             return nums[0]
         max = 0
         i = 0
-        sum = nums[i] + self.rob(nums[i+2]))
+        #sum = nums[i] + self.rob(nums[i+2])
             
 sol1 = Solution()
 print(sol1.rob([1,2,3,1]))
