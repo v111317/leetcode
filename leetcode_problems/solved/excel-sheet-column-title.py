@@ -3,6 +3,7 @@
 #Given an integer columnNumber, return its corresponding column title 
 # as it appears in an Excel sheet.
 
+#revise
 import string
 import math
 
@@ -16,7 +17,7 @@ class Solution:
         
         while columnNumber!=0:
         
-            quotient = math.floor(columnNumber / 26)
+            quotient = columnNumber // 26
             remainder = columnNumber % 26
             if remainder==0:
                 quotient -= 1

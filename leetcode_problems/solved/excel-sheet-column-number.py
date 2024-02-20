@@ -25,23 +25,13 @@ class Solution:
         
 sol1 = Solution()
 print("AB", sol1.titleToNumber2("AB"))
-#print("L", sol1.titleToNumber2("L"))
-# print("CVA", sol1.titleToNumber("CVA"))
-# print("A", sol1.titleToNumber("A"))
-# print("ZY", sol1.titleToNumber("ZY"))
+# print("L", sol1.titleToNumber2("L"))
 # print("ZA", sol1.titleToNumber("ZA"))
 # print("AZS", sol1.titleToNumber("AZS"))
-# print("YZ", sol1.titleToNumber("YZ"))
-# print("ZZY", sol1.titleToNumber("ZZY"))
+
 # 12 L
-# 2601 CVA
-# 28 AB
-# 1 A
-# 701 ZY
 # 677 ZA
 # 1371 AZS
-# 676 YZ
-# 18277 ZZY
 
 #time - O(n)
 #space - O(1)

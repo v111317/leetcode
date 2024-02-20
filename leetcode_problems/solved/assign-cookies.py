@@ -33,11 +33,34 @@ class Solution:
                 j += 1
         
         return fulfilled
+    
+    def findContentChildren2(self, g: List[int], s: List[int]) -> int:
+        if len(s)==0:
+            return 0
+        
+        g.sort()
+        s.sort()
+        
+        j = 0
+        fulfilled = 0
+        for i in range(len(s)):
+            if s[i]>=g[j]:
+                fulfilled += 1
+                j += 1
+            if j > len(g)-1:
+                break
+        
+        return fulfilled
+        
         
 sol1 = Solution()
-print(sol1.findContentChildren([1,2,3], [1,1]))
-print(sol1.findContentChildren([1,2], [1,2,3]))
+print(sol1.findContentChildren2([1,2,3], [1,1]))
+print(sol1.findContentChildren2([1,2], [1,2,3]))
                 
-
+#solution 1
 #time - O(n*n)
+#space - O(1)        
+
+#solution 2
+#time - O(n)
 #space - O(1)        

@@ -40,7 +40,6 @@ print(sol1.canPlaceFlowers([1,0,0,0,1], 2))
 print(sol1.canPlaceFlowers([1,0,0,0,1,0,0], 2))
 print(sol1.canPlaceFlowers([1,0,1,0,0,1,0], 1))
 
-
         
-#time - 
-#space - 
+#time - O(n)
+#space - O(1)
