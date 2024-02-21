@@ -10,22 +10,13 @@ class Solution:
         
         maxProduct = nums[0] * nums[1] * nums[2]
         
-        if len(nums)==3:
+        n = len(nums)
+        if n==3:
             return maxProduct
+        nums.sort()
         
-        numList = nums[0:3]
-        minNum = min(numList)
-        minIdx = numList.index(minNum)
-            
-        for i in range(3, len(nums)):
-            newProduct = (maxProduct/minNum) * nums[i]
-            if newProduct > maxProduct:
-                maxProduct = newProduct
-                numList[minIdx] = nums[i]
-                minNum = min(numList)
-                minIdx = numList.index(minNum)
-        return int(maxProduct)
-    
+        return max(nums[n-1]*nums[n-2]*nums[n-3], nums[n-1]*nums[0]*nums[1])
+        
 
 sol1 = Solution()
 print(sol1.maximumProduct([1,2,3,4])) 
@@ -35,5 +26,5 @@ print(sol1.maximumProduct([-100,-98,-1,2,3,4]))
             
             
 
-#time - 
-#space - 
+#time - O(1)
+#space - O(1)
