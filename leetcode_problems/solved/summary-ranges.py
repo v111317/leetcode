@@ -16,28 +16,37 @@ from typing import List
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
         
+        if len(nums)==1:
+            return [str(nums[0])]
+        
         ranges = []
         startIdx = 0
         endIdx = 0
-        for endIdx in range(len(nums)):
-
-            if nums[endIdx] - nums[startIdx]<=1:
-                continue
+        i = 1
+        while i < len(nums):
+            
+            if nums[i] - nums[i-1]==1:
+                endIdx = i
             else:
-                if nums[startIdx] == nums[endIdx-1]:
+                if nums[startIdx] == nums[endIdx]:
                     ranges.append(str(nums[startIdx]))
                 else:
-                    ranges.append(str(nums[endIdx-1]) + "->" + str(nums[startIdx]))
-                startIdx = endIdx
+                    ranges.append(str(nums[startIdx]) + "->" + str(nums[endIdx]))
                 
-        
-        # if startIdx < len(nums):
-        #     ranges.append(str(nums[startIdx]))        
+                startIdx = i
+                endIdx = i
+            if i == len(nums)-1:
+                if nums[startIdx] == nums[endIdx]:
+                    ranges.append(str(nums[startIdx]))
+                else:
+                    ranges.append(str(nums[startIdx]) + "->" + str(nums[endIdx]))
+            i += 1
+                       
         return ranges
             
 sol1 = Solution()
 print(sol1.summaryRanges([0,1,2,4,5,7]))
 print(sol1.summaryRanges([0,2,3,4,6,8,9]))
 
-#time - 
-#space - 
+#time - O(n)
+#space - O(1)
