@@ -25,7 +25,7 @@ class Solution:
             #print(nums[(i+k)%n], nums[i])
             i = (i+k)%n
             temp = nums[i]
-            nums[(i+k)%n] = nums[i]
+            nums[i] = nums[i]
             count += 1
             
             #print(nums)
