@@ -5,6 +5,7 @@
 
 # Note that after backspacing an empty text, the text will continue empty.
 
+#revise
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
         backspaceCount = 0
@@ -32,7 +33,7 @@ class Solution:
                 else:
                     backspaceCount -= 1
             i -= 1
-        print(finalStr1, finalStr2)
+        #print(finalStr1, finalStr2)
         return finalStr1==finalStr2
 
 sol1 = Solution()

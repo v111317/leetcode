@@ -10,6 +10,7 @@
 from typing import List
 import math
 
+#revise
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         i = 0
@@ -33,6 +34,10 @@ class Solution:
         if zeroCount>0:
             flowerCount += math.ceil(zeroCount/2)
         return flowerCount >= n
+    
+    def canPlaceFlowers2(self, flowerbed: List[int], n: int) -> bool:
+        a = 1
+        #check for adjacent positions
 
 sol1 = Solution()
 print(sol1.canPlaceFlowers([1,0,0,0,1], 1))
@@ -40,6 +45,8 @@ print(sol1.canPlaceFlowers([1,0,0,0,1], 2))
 print(sol1.canPlaceFlowers([1,0,0,0,1,0,0], 2))
 print(sol1.canPlaceFlowers([1,0,1,0,0,1,0], 1))
 
-        
+#solution 1        
 #time - O(n)
 #space - O(1)
+
+#solution 2

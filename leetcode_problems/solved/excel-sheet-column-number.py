@@ -24,8 +24,8 @@ class Solution:
     
         
 sol1 = Solution()
-print("AB", sol1.titleToNumber2("AB"))
-# print("L", sol1.titleToNumber2("L"))
+print("AB", sol1.titleToNumber("AB"))
+# print("L", sol1.titleToNumber("L"))
 # print("ZA", sol1.titleToNumber("ZA"))
 # print("AZS", sol1.titleToNumber("AZS"))
 

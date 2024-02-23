@@ -8,6 +8,7 @@
 
 # For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
 
+#revise
 class Solution:
     def buddyStrings(self, s: str, goal: str) -> bool:
         if len(s) < 2 or len(s)!=len(goal):
@@ -44,12 +45,16 @@ class Solution:
                         letterMap[key] += 1
                               
                 i += 1
-                #print(letterMap)
                 
             for n in list(letterMap.values()):
                 if n == 0:
                     return False
-            return True           
+            return True    
+        
+    def buddyStrings2(self, s: str, goal: str) -> bool:       
+        a = 1
+        #implement using set
+        #swap and check
     
 sol1 = Solution()
 print(sol1.buddyStrings("abcd", "cbad"))   
@@ -58,6 +63,11 @@ print(sol1.buddyStrings("ab", "ba"))
 print(sol1.buddyStrings("aa", "aa"))       
 print(sol1.buddyStrings("abcdef", "cbadef"))   
 print(sol1.buddyStrings("abcdef", "cbadeg"))    
-print(sol1.buddyStrings("abcaa", "abcbb"))    
+print(sol1.buddyStrings("abcaa", "abcbb"))   
+#solution 1   
+#time - O(n)
+#space - O(n)
+
+#solution 2   
 #time - O(n)
 #space - O(n)
