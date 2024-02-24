@@ -1,3 +1,8 @@
+#https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+
+# Given two integer arrays nums1 and nums2, return an array of their intersection. 
+# Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
 from typing import List
 
 class Solution:
@@ -18,8 +23,8 @@ class Solution:
         return list(commonNums)
 
 sol1 = Solution()
-print(sol1.intersection([1,2,2,1], [2,2]))
-print(sol1.intersection([4,9,5], [9,4,9,8,4]))
+print(sol1.intersect([1,2,2,1], [2,2]))
+print(sol1.intersect([4,9,5], [9,4,9,8,4]))
 
 #time - O(n)
 #space - O(n)

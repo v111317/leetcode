@@ -29,8 +29,8 @@ print(sol1.heightChecker([1,1,4,2,1,3]))
 print(sol1.heightChecker([5,1,2,3,4]))
 
 
-#time - 
-#space -     
+#time - O(nlogn)
+#space - O(n)    
                 
 
 

@@ -14,7 +14,7 @@ class Solution:
         
         #flip
         for i in range(n):
-            for j in range(int(n/2)):
+            for j in range(n//2):
                 temp = image[i][j]
                 image[i][j] = image[i][n-j-1]
                 image[i][n-j-1] = temp
@@ -30,5 +30,5 @@ sol1 = Solution()
 print(sol1.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]]))
 print(sol1.flipAndInvertImage([[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]))
 
-#time - 
-#space - 
+#time - O(n*n)
+#space - O(1)

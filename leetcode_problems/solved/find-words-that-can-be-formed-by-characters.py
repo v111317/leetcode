@@ -43,6 +43,6 @@ class Solution:
 sol1 = Solution()
 print(sol1.countCharacters(["cat","bt","hat","tree"], "atach"))
 print(sol1.countCharacters(["hello","world","leetcode"], "welldonehoneyr"))
-["hello","world","leetcode"]
+
 #time - O(n*n)
 #space - O(n)

@@ -1,3 +1,8 @@
+#https://leetcode.com/problems/first-unique-character-in-a-string/description/
+
+#Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+#revise
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         letterMap = {}
@@ -18,11 +23,26 @@ class Solution:
         else:
             return minIdx
     
+    def firstUniqChar2(self, s: str) -> int:
+        letterMap = {}
+        
+        for idx, letter in enumerate(s):
+            if letter in letterMap:
+                letterMap[letter] += 1
+            else:
+                letterMap[letter] = 1
+         
+        for idx, letter in enumerate(s):
+            if letterMap[letter] == 1:
+                return idx
+        return -1
+        
+    
 sol1 = Solution()
-print(sol1.firstUniqChar("leetcode"))
-print(sol1.firstUniqChar("loveleetcode"))
-print(sol1.firstUniqChar("aabb"))
+print(sol1.firstUniqChar2("leetcode"))
+print(sol1.firstUniqChar2("loveleetcode"))
+print(sol1.firstUniqChar2("aabb"))
 
 #time - O(n)
-#space - O(n)        
+#space - O(1)        
         
