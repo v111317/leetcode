@@ -19,7 +19,6 @@ class Solution:
         mid = end // 2
         
         while start <= end:
-            print(start, mid, end)
             if target > nums[mid]:
                 start = mid + 1
             elif target < nums[mid]:
@@ -32,3 +31,6 @@ class Solution:
 sol1 = Solution()
 print(sol1.search([-1,0,3,5,9,12], 8))
 print(sol1.search([2,5], 5))
+
+#time - O(logn)
+#space - O(1)

@@ -22,20 +22,16 @@ class Solution:
             for letter in word:
                 if letter not in letterMap:
                     letterMap[letter] = idx
-        #print(letterMap)
         result = []
         listNum = 0
         for word in words:
             if word.lower() not in wordMap:
                 wordMap[word.lower()] = word
-        #print(wordMap)
         isMatch = False
         for word in words:
             word = word.lower()
             listNum = letterMap[word[0]]
-            #print(word, listNum)
             for i in range(len(word)):
-                #print(i, word[i], letterMap[word[i]], listNum )
                 if letterMap[word[i]]==listNum:
                     isMatch = True
                     continue
