@@ -1,0 +1,8 @@
+notes
+=====
+
+method of comparison important
+
+sort([], key=lambda_fn)
+
+lambda functions are anonymous functions

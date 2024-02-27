@@ -23,7 +23,7 @@ class Solution:
         rankTable = [float('-inf'), float('-inf'), float('-inf')]
         
         for num in nums:
-            if num > 1
+            a = 1
 
 sol1 = Solution()
 print(sol1.thirdMax([3,2,1]))

@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/is-subsequence/description/?envType=study-plan-v2&envId=top-interview-150
+#https://leetcode.com/problems/is-subsequence/description/
 
 # Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 
