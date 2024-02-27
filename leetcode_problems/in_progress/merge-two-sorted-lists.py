@@ -32,49 +32,61 @@ class LinkedList:
             ptr = ptr.next
         print(" ")
 
+
+
+# ll1.printList()
+# ll2.printList()
+        
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    #def mergeTwoLists(self, list1, list2):
+        
+        # ptr = list1
+        # while ptr!=None:
+        #     print(ptr.num, end=" => ")
+        #     ptr = ptr.next
+        # print(" ")
+        
+        # ptr = list2
+        # while ptr!=None:
+        #     print(ptr.num, end=" => ")
+        #     ptr = ptr.next
+        # print(" ")
+        
+        if list1.head==None:
+            return list2
+        
+        if list2.head==None:
+            return list1
+        
+        ptr1 = list1.head
+        ptr2 = list2.head
+        
+        while ptr2!=None:
+            
+            while ptr1!=None and ptr1.next!=None and ptr2.num > ptr1.next.num:
+                ptr1 = ptr1.next
+                
+            nextptr1 = ptr1.next  
+            nextptr2 = ptr2.next  
+            ptr1.next = ptr2
+            ptr2.next = nextptr1
+            ptr1 = ptr1.next
+            ptr2 = nextptr2
+        
+        return list1
+        
+            
+            
 ll1 = LinkedList()
-ll1.insertAtBegin(6)
-ll1.insertAtBegin(5)
+ll1.insertAtBegin(4)
+ll1.insertAtBegin(2)
 ll1.insertAtBegin(1)
 
 ll2 = LinkedList()
 ll2.insertAtBegin(4)
 ll2.insertAtBegin(3)
-ll2.insertAtBegin(2)
-
-ll1.printList()
-ll2.printList()
+ll2.insertAtBegin(1)            
         
-class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        
-        if list1==None:
-            return list2
-        
-        if list2==None:
-            return list1
-        
-        ptr1 = list1
-        ptr2 = list2
-        
-        while list2!=None:
-            
-            while ptr2.num:
-                a = 1
-            nextptr1 = ptr1.next    
-            nextptr2 = ptr2.next
-            list2 = nextptr2
-            
-            if ptr1.num > ptr2.num:
-                a = 1
-            else:
-                ptr1.next = ptr2
-                ptr2.next = nextptr1
-            ptr1 = ptr2
-            ptr2 = list2
-            
-            
-            
-        
-#sol1 = Solution()
-#sol1.mergeTwoLists(ll1.head, ll2.head)
+sol1 = Solution()
+sol1.mergeTwoLists(ll1.head, ll2.head)

@@ -1,31 +1,35 @@
-#https://leetcode.com/problems/group-anagrams/description/
+class Node:
+    
+    def __init__(self, value):
+        self.num = value
+        self.next = None
 
-# Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-
-# An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, 
-# typically using all the original letters exactly once.
-from typing import List
-
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        wordMap = {}
-        groupMap = {}
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
         
-        for s in strs:
-            key = sort(s)
-            if key in wordMap:
-                group = groupMap[key]
-                group.append(s)
-                groupMap[key] = group
-            else:
-                wordMap[key] = 1
-                groupMap[key] = []
-        print(wordMap)
-        print(groupMap)
-        result = []
-        for gp in groupMap.values():
-            result.append(gp)
-        return result
+    def insertAtBeginning(self, value):
+        newNode = Node(value)
+        
+        if self.head == None:
+            self.head = newNode
+        else:
+            newNode.next = self.head
+            self.head = newNode
+    
+    def printList(self):
+        ptr = self.head
+        while ptr!=None:
+            print(ptr.num, end=" => ")
+            ptr = ptr.next
+        
+ll1 = LinkedList()
+ll1.insertAtBeginning(10)
+ll1.insertAtBeginning(4)
+ll1.insertAtBeginning(15)
+ll1.insertAtBeginning(25)
+ll1.insertAtBeginning(9)
+ll1.insertAtBeginning(30)
 
-sol1 = Solution()
-print(sol1.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+ll1.printList()
