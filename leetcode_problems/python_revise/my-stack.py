@@ -37,12 +37,14 @@ from collections import deque
 
 stack2 = deque()
 
-stack2.append(1)
 stack2.append(10)
+stack2.append(5)
 stack2.append(100)
+stack2.append(20)
 print(stack2)
 
 print(stack2.pop()) 
+print(stack2)
 
 from queue import LifoQueue
 
