@@ -13,38 +13,40 @@ class Tree:
         
     def insertNode(self, root, value):
         
+        print(value)
         if root == None:
             newNode = Node(value)
             root = newNode
-            return root
+            return
         
         if value > root.num:
             self.insertNode(root.right, value)
         else:
             self.insertNode(root.left, value)
             
-        return root
+        return #root
         
     def printTree(self, root):
         # root = self.root
+        #print(root.num)
+        print("printing tree")
+        if root==None:
+            print("none")
+            return
         
-        if root.left!=None:
-            self.printTree(root.left)
-        
-        if root.right!=None:
-            self.printTree(root.right)
-        
+        self.printTree(root.left)
         print(" => ", root.num)
-        return 
+        self.printTree(root.right)
         
+        return 
         
 
 t1 = Tree()
-t1.insertNode(t1.root, 10)
-t1.insertNode(t1.root, 3)
-t1.insertNode(t1.root, 8)
-t1.insertNode(t1.root, 20)
-t1.insertNode(t1.root, 15)
-t1.insertNode(t1.root, 25)
+t1.root = t1.insertNode(t1.root, 10)
+t1.root = t1.insertNode(t1.root, 3)
+t1.root = t1.insertNode(t1.root, 8)
+t1.root = t1.insertNode(t1.root, 20)
+t1.root = t1.insertNode(t1.root, 15)
+t1.root = t1.insertNode(t1.root, 25)
 
 t1.printTree(t1.root)
