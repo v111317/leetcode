@@ -12,10 +12,20 @@
 
 # Do not allocate extra space for another array. 
 # You must do this by modifying the input array in-place with O(1) extra memory.
+from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        a = 1
+        vacantIdx = 0
+        i = 0
+        count = 1
+        
+        while i < len(nums)-1:
+            if nums[i]==nums[i+1]:
+                count += 1
+                i += 1
+                
+                
         
 #time - 
 #space - 
