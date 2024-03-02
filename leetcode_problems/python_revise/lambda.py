@@ -18,3 +18,6 @@ list3.sort(key=lambda item: len(item))
 print(list3)
 
 list3.sort(key=len)
+
+for variable_1 in range(10,50,-5):
+    print("executed")
