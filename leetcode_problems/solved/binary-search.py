@@ -6,6 +6,7 @@
 # You must write an algorithm with O(log n) runtime complexity.
 from typing import List
 
+#revise
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if len(nums)==1:

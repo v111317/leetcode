@@ -24,14 +24,15 @@ class Solution:
         if g[0] > s[len(s)-1]:
             return 0
         j = 0
-        for i in range(len(g)):
-            while j < len(s):
-                if s[j]>=g[i]:
-                    fulfilled += 1
-                    if j < len(s):
-                        j += 1
+        i = 0
+        while i < len(g):
+            if s[j]>=g[i]:
+                fulfilled += 1
+                # j += 1
+                i += 1
+            j += 1    
+            if j > len(s)-1:
                     break
-                j += 1
         
         return fulfilled
     
@@ -55,11 +56,11 @@ class Solution:
         
         
 sol1 = Solution()
-print(sol1.findContentChildren2([1,2,3], [1,1]))
-print(sol1.findContentChildren2([1,2], [1,2,3]))
+print(sol1.findContentChildren([1,2,3], [1,1]))
+print(sol1.findContentChildren([1,2], [1,2,3]))
                 
 #solution 1
-#time - O(n*n)
+#time - O(n)
 #space - O(1)        
 
 #solution 2

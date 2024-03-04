@@ -6,6 +6,7 @@
 # Notice that the solution set must not contain duplicate triplets.
 from typing import List
 
+#revise
 class Solution:
     #time limit exceeded
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -94,7 +95,6 @@ class Solution:
                 
                 if sum==0:
                     listItem = [nums[i], nums[j], nums[k]]
-                    #listItem.sort()
                     resultSet.add(tuple(listItem))
                     j += 1
                     k -= 1
@@ -125,5 +125,5 @@ print(sol1.threeSum3(list1))
 print(sol1.threeSum3(list2))
 
 
-#time -
-#space - 
+#time - O(n*n)
+#space - O(1)

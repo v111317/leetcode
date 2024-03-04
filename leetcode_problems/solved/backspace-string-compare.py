@@ -33,7 +33,6 @@ class Solution:
                 else:
                     backspaceCount -= 1
             i -= 1
-        #print(finalStr1, finalStr2)
         return finalStr1==finalStr2
 
 sol1 = Solution()
