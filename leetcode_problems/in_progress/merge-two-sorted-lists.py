@@ -34,24 +34,23 @@ class LinkedList:
 
 
 
-# ll1.printList()
-# ll2.printList()
+
         
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-    #def mergeTwoLists(self, list1, list2):
+    #def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(self, list1, list2):
         
-        # ptr = list1
-        # while ptr!=None:
-        #     print(ptr.num, end=" => ")
-        #     ptr = ptr.next
-        # print(" ")
+        ptr = list1
+        while ptr!=None:
+            print(ptr.num, end=" => ")
+            ptr = ptr.next
+        print(" ")
         
-        # ptr = list2
-        # while ptr!=None:
-        #     print(ptr.num, end=" => ")
-        #     ptr = ptr.next
-        # print(" ")
+        ptr = list2
+        while ptr!=None:
+            print(ptr.num, end=" => ")
+            ptr = ptr.next
+        print(" ")
         
         if list1.head==None:
             return list2
@@ -76,8 +75,6 @@ class Solution:
         
         return list1
         
-            
-            
 ll1 = LinkedList()
 ll1.insertAtBegin(4)
 ll1.insertAtBegin(2)
@@ -86,7 +83,10 @@ ll1.insertAtBegin(1)
 ll2 = LinkedList()
 ll2.insertAtBegin(4)
 ll2.insertAtBegin(3)
-ll2.insertAtBegin(1)            
+ll2.insertAtBegin(1)     
+
+# ll1.printList()
+# ll2.printList()       
         
 sol1 = Solution()
 sol1.mergeTwoLists(ll1.head, ll2.head)
