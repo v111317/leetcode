@@ -40,17 +40,20 @@ class Solution:
     #def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     def mergeTwoLists(self, list1, list2):
         
-        ptr = list1
+        ptr = list1.head
         while ptr!=None:
             print(ptr.num, end=" => ")
             ptr = ptr.next
         print(" ")
         
-        ptr = list2
+        ptr = list2.head
         while ptr!=None:
             print(ptr.num, end=" => ")
             ptr = ptr.next
         print(" ")
+        
+        if list1.head==None and list2.head==None:
+            return None
         
         if list1.head==None:
             return list2
@@ -89,4 +92,4 @@ ll2.insertAtBegin(1)
 # ll2.printList()       
         
 sol1 = Solution()
-sol1.mergeTwoLists(ll1.head, ll2.head)
+sol1.mergeTwoLists(ll1, ll2)
