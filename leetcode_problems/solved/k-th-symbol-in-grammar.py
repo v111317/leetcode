@@ -21,11 +21,29 @@ class Solution:
             str2 = arr[len(arr)//2:len(arr)]
                     
             arr = str1 + str2 + str2 + str1
-        #print(arr)
         return int(arr[k-1])
+    
+    def kthGrammar2(self, n: int, k: int) -> int:
+        #arr = "01"
+        if n==1:
+            return 0
+        if n==2:
+            return int("01"[k-1])
+        else:
+            patternLenHalf = int(pow(2, n-1)/2)
+            if k > patternLenHalf:
+                return int(not self.kthGrammar2(n-1, k - patternLenHalf))
+            else:
+                return int(self.kthGrammar2(n-1, k))
+            
+
+    
 
 sol1 = Solution()
+print(sol1.kthGrammar2(5, 11))
+print(sol1.kthGrammar2(5, 5))
+print(sol1.kthGrammar2(4, 4))
 #print(sol1.kthGrammar(1, 1))
 # print(sol1.kthGrammar(2, 2))
 # print(sol1.kthGrammar(5, 4))
-print(sol1.kthGrammar(30, 434991989))
+#print(sol1.kthGrammar(30, 434991989))

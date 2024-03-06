@@ -1,3 +1,10 @@
+#https://leetcode.com/problems/word-pattern/description/
+
+# Given a pattern and a string s, find if s follows the same pattern.
+
+# Here follow means a full match, such that there is a bijection between a letter in pattern 
+# and a non-empty word in s.
+
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         s = s.split(" ")
@@ -27,3 +34,6 @@ print(sol1.wordPattern("aaaa", "dog cat cat dog"))
 print(sol1.wordPattern("aa", "dog"))
 print(sol1.wordPattern("a", "dog"))
 print(sol1.wordPattern("ab", "dog dog"))
+
+#time - O(n) - n=no. of words
+#space - O(n)
