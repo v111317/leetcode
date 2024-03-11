@@ -32,6 +32,7 @@ class SortingAlgos:
                     nums[j+1] = temp
         return nums
     
+    # it fixes a position and works to sort all elements upto the fixed position
     def insertionSort(self, nums):
         for i in range(1, len(nums)):
             j = i
@@ -45,7 +46,7 @@ class SortingAlgos:
         
 
 sol1 = SortingAlgos()
-print(sol1.selectionSort([1, 9, 4, 3, 8, 10, 2, 4]))
-print(sol1.bubbleSort([1, 9, 4, 3, 8, 10, 2, 4]))
+# print(sol1.selectionSort([1, 9, 4, 3, 8, 10, 2, 4]))
+# print(sol1.bubbleSort([1, 9, 4, 3, 8, 10, 2, 4]))
 print(sol1.insertionSort([1, 9, 4, 3, 8, 10, 2, 4]))
              
