@@ -41,12 +41,59 @@ class SortingAlgos:
                 nums[j] = nums[j-1]
                 nums[j-1] = temp
                 j -= 1
-        return nums        
+        return nums
+    
+    def mergeSort(self, nums):
+        if len(nums) in [0, 1]:
+            return nums
+        else:
+            #print(nums)
+            mid = len(nums)//2
+            
+            leftArr =  []
+            for i in range(0, mid):
+                leftArr.append(nums[i])
+            
+            rightArr = []
+            for i in range(mid, len(nums)):
+                rightArr.append(nums[i])
+            
+            #print(" => ", leftArr)
+            #print(" => ", rightArr)    
+            leftArr = self.mergeSort(leftArr)
+            rightArr = self.mergeSort(rightArr)   
+            
+            result = []
+            i = 0
+            j = 0
+            while i < len(leftArr) and j < len(rightArr):
+                if leftArr[i] < rightArr[j]:
+                    result.append(leftArr[i])
+                    i += 1
+                else:
+                    result.append(rightArr[j])
+                    j += 1
+            
+            while i < len(leftArr):
+                result.append(leftArr[i])
+                i += 1
                 
+            while j < len(rightArr):
+                result.append(rightArr[j])    
+                j += 1
+            #print(" ===> ", result)
+            return result
+    
+    def quickSort(self, nums):
+        a = 1
+           
         
 
 sol1 = SortingAlgos()
 # print(sol1.selectionSort([1, 9, 4, 3, 8, 10, 2, 4]))
 # print(sol1.bubbleSort([1, 9, 4, 3, 8, 10, 2, 4]))
-print(sol1.insertionSort([1, 9, 4, 3, 8, 10, 2, 4]))
+#print(sol1.insertionSort([1, 9, 4, 3, 8, 10, 2, 4]))
+print(sol1.mergeSort([1, 9, 4, 3, 8, 10, 2, 4]))
+print(sol1.)
+
              
