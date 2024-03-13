@@ -25,6 +25,9 @@ class Solution:
         start = 1
         mid = n // 2
         end = n
-        
+        while start < end:
+            if isBadVersion(mid):
+                return mid
+            
         
         
