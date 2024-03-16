@@ -84,16 +84,46 @@ class SortingAlgos:
             #print(" ===> ", result)
             return result
     
-    def quickSort(self, nums):
-        a = 1
-           
+    def quickSort(self, nums, start, end):
+        # print(start, end)
+        # if start==0 and end==5:
+        #     exit()
+        if start>=end:
+            return
         
+        #pivot = nums[end]
+        pIdx = self.partition(nums, start, end)
+        # print(" => ", pIdx)
+        self.quickSort(nums, start, pIdx-1)
+        self.quickSort(nums, pIdx+1, end)
+        
+        return 
+    
+    
+    def partition(self, nums, start, end):
+        #a = 1
+        pivot = nums[end]
+        pIdx = start
+        for i in range(start, end):
+            # print(nums, pIdx)
+            if nums[i] <= pivot:
+                temp = nums[i]
+                nums[i] = nums[pIdx]
+                nums[pIdx] = temp
+                pIdx += 1     
+        temp = nums[pIdx]
+        nums[pIdx] = nums[end]
+        nums[end] = temp
+        # print(nums)
+        return pIdx
 
 sol1 = SortingAlgos()
 # print(sol1.selectionSort([1, 9, 4, 3, 8, 10, 2, 4]))
 # print(sol1.bubbleSort([1, 9, 4, 3, 8, 10, 2, 4]))
 #print(sol1.insertionSort([1, 9, 4, 3, 8, 10, 2, 4]))
-print(sol1.mergeSort([1, 9, 4, 3, 8, 10, 2, 4]))
-print(sol1.)
+#print(sol1.mergeSort([1, 9, 4, 3, 8, 10, 2, 4]))
+nums = [1, 9, 4, 3, 8, 10, 2, 4]
+sol1.quickSort(nums, 0, 7)
+print(nums)
 
              
