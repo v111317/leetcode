@@ -13,21 +13,39 @@
 # The isBadVersion API is already defined for you.
 import random
 
-def isBadVersion(version: int) -> bool:
-    num = random.randint(0, 9)
-    if num % 2 == 0:
-        return True
-    else:
-        False
+
 
 class Solution:
+    def isBadVersion(self, version: int) -> bool:
+        if version >= 4:
+            return True
+        else:
+            return False
+    
     def firstBadVersion(self, n: int) -> int:
+        if self.isBadVersion(1):
+            return 1
+        
         start = 1
-        mid = n // 2
         end = n
-        while start < end:
-            if isBadVersion(mid):
-                return mid
+        while start <= end:
+            
+            mid = (start+end)//2
+            print(start, mid, end)
+            if self.isBadVersion(mid):
+                if mid > 0 and not self.isBadVersion(mid-1):
+                    return mid
+                else:
+                    end = mid - 1
+            else:
+                if mid < n and self.isBadVersion(mid+1):
+                    return mid+1
+                else:
+                    start = mid + 1
+            
+    
+sol1 = Solution()
+print(sol1.firstBadVersion(5))        
             
         
         
