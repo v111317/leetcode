@@ -14,24 +14,29 @@ class Solution:
         n = len(matrix)
         #transpose
         for i in range(n):
-            for j in range(n):
-                print(i, j)
-                print(" => ", matrix[i][j])
+            for j in range(i, n):
+                #print(i, j)
+                #print(" => ", matrix[i][j])
                 temp = matrix[i][j]
                 matrix[i][j] = matrix[j][i]
                 matrix[j][i] = temp
-                print(" => ", matrix[i][j])
+                #print(" => ", matrix[i][j])
         
-        print(matrix)
+        #print(matrix)
         #swap columns
-        for i in range(n//2):
-            for j in range(n):
+        for i in range(n):
+            for j in range(n//2):
+                #print(i, j)
+                #print(n-1-i, j)
                 temp = matrix[i][j]
-                matrix[i][j] = matrix[n-1-i][j]
-                matrix[n-1-i][j] = temp
-        print(matrix)
+                matrix[i][j] = matrix[i][n-1-j]
+                matrix[i][n-1-j] = temp
+        #print(matrix)
         
 sol1 = Solution()
 mat1 = [[1,2,3],[4,5,6],[7,8,9]]
 sol1.rotate(mat1)
-print(mat1)
+#print(mat1)
+mat2 = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+sol1.rotate(mat2)
+print(mat2)
