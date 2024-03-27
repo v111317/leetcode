@@ -16,6 +16,7 @@
 from typing import List
 
 class Solution:
+    #try solving using O(1) space
     def gameOfLife(self, board: List[List[int]]) -> None:
         """
         Do not return anything, modify board in-place instead.

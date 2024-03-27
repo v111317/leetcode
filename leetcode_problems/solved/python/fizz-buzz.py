@@ -28,4 +28,4 @@ sol1 = Solution()
 print(sol1.fizzBuzz(5))
 
 #time - O(n)
-#space - O(1)
+#space - O(n)

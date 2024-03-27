@@ -29,5 +29,5 @@ class Solution:
 sol1 = Solution()
 print(sol1.canConstruct("aa", "bba"))
 
-#time complexity - O(n) + O(m)
-#space - O(k) - distinct letters 
+#time - O(no. of magazine letters)
+#space - O(26) - distinct letters 

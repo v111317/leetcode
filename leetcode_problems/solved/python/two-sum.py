@@ -16,7 +16,8 @@ class Solution:
                 numDict[n].append(idx)
             else:
                 numDict[n] = [idx]
-                
+        
+        print(numDict)        
 
         for num in numDict:
             leftover = target - num
@@ -24,7 +25,7 @@ class Solution:
                 continue
             
             if leftover!=num:
-                return numDict[num] + numDict[leftover]
+                return numDict[num] + numDict[leftover] #concatenate two arrays
             else:
                 if len(numDict[num])==2:
                     return numDict[num]
@@ -38,12 +39,10 @@ class Solution:
             else:
                 numsDict[target-n] = idx
                 
-                
-            
-#         return False
+
     
 sol1 = Solution()
-print(sol1.twoSum2([2,5,5, 11], 10))
+print(sol1.twoSum([2,7,11,15], 9))
 
 #solution 1
 #time - O(n)
