@@ -1,7 +1,14 @@
-space complexity is O(1) if no extra space is used. Space used for input and output is not counted.
+Points
+======
 
-bitwise operators to check for odd/even and half a number - &, x >> 1 <- move digits of x to right
+1) space complexity is O(1) if no extra space is used.
 
+2) use bitwise operators to check for odd/even and half/double or check bits of a number - &, x >> 1 <- move digits of x to right.
+It is faster computation wise.
+
+3) substring is continuous; subsequence is not eg- str = "abcde"; substring= abc; subsequence=abd
+
+4)
 
 Leetcode
 ========

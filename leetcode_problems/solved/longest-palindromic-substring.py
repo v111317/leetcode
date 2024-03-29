@@ -21,7 +21,9 @@ class Solution:
                 count = 0
                 rightIdx = (center+1)//2
                 leftIdx = rightIdx - 1
-                
+            
+            print(leftIdx, rightIdx, s[leftIdx:rightIdx+1])    
+            
             while s[leftIdx]==s[rightIdx]:
                 count += 2
                 if count > maxLen:
@@ -41,10 +43,10 @@ class Solution:
         
 sol1 = Solution()
 print(sol1.longestPalindrome("babad"))    
-print(sol1.longestPalindrome("cbbd"))  
-print(sol1.longestPalindrome("ac"))
-print(sol1.longestPalindrome("a"))     
-print(sol1.longestPalindrome("ccc"))       
+# print(sol1.longestPalindrome("cbbd"))  
+# print(sol1.longestPalindrome("ac"))
+# print(sol1.longestPalindrome("a"))     
+# print(sol1.longestPalindrome("ccc"))       
 
 #time - O(n*n)
 #space - O(1)

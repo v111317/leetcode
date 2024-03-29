@@ -26,6 +26,11 @@ class Solution:
                 letterMap = {s[startIdx]:1}
             i += 1    
         return maxLen
+
+    #start from the last matched character instead of moving the startIdx by 1
+    def lengthOfLongestSubstring2(self, s: str) -> int:
+        a = 1
+        #https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/3649636/3-method-s-c-java-python-beginner-friendly/
     
 sol1 = Solution()
 print(sol1.lengthOfLongestSubstring("abcabcbb"))  

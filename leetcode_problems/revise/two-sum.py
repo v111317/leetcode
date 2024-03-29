@@ -17,7 +17,7 @@ class Solution:
             else:
                 numDict[n] = [idx]
         
-        print(numDict)        
+        #print(numDict)        
 
         for num in numDict:
             leftover = target - num
