@@ -14,27 +14,44 @@ class Solution:
         
         result = []
         for asteroid in asteroids:
-            if asteroid > 0:
+            if len(result)==0: 
                 result.append(asteroid)
-            else:
-                collResult = asteroid
-                if len(result) > 0:
-                    while len(result)> 0 and collResult<0:
-                        n = len(result)
-                        top = result[n-1]
-                        if top > 0:               
-                            if abs(asteroid) > top:
-                                result.pop()
-                                collResult = asteroid
+                continue
+            
+            collResult = -1
+            while len(result)>0 and collResult<0:
+                
+                n = len(result)
+                top = result[n-1]
+                if top > 0:               
+                    if asteroid > 0: 
+                        result.append(asteroid)
+                        break
+                    else:
+                        if abs(asteroid)>=top:
+                            result.pop()
+                            if len(result)==0 and abs(asteroid)>top:
+                                result.append(asteroid)
+                                collResult = -1
                             else:
-                                result.append(top)
-                                collResult = 0
+                                collResult = 1 #fix here
                         else:
-                            result.append(top)
-                            collResult = 0
-                        
+                            collResult = 1
                 else:
                     result.append(asteroid)
+                    break
+                print(asteroid, result, collResult)
+        return result
+    
+sol1 = Solution()
+# print(sol1.asteroidCollision([5, 10, -5]))  
+# print(sol1.asteroidCollision([8, -8]))
+# print(sol1.asteroidCollision([10, 2, -5]))
+# print(sol1.asteroidCollision([-2,-1,1,2]))
+# print(sol1.asteroidCollision([-2,-2,1,-1]))
+print(sol1.asteroidCollision([-2,-2,1,-2]))
+
+                    
                             
                 
             
