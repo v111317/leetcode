@@ -43,13 +43,54 @@ class Solution:
                 print(asteroid, result, collResult)
         return result
     
+    def asteroidCollision2(self, asteroids: List[int]) -> List[int]:
+        
+        result = []
+        for asteroid in asteroids:
+            if len(result)==0:
+                result.append(asteroid)
+                continue
+        
+            n = len(result)
+            top = result[n-1]
+            
+            if top < 0:
+                result.append(asteroid)
+                continue
+            else:
+                if asteroid > 0:
+                    result.append(asteroid)
+                    continue    
+            
+            #top +ve, asteroid -ve
+            collResult = 1
+            while collResult!=0:
+                if top < 0:
+                    result.append(asteroid)
+                    break
+                    
+                if top >= abs(asteroid):
+                    if top==abs(asteroid):
+                        result.pop()
+                    collResult = 0
+                else:
+                    result.pop()
+                    n = len(result)
+                    if n == 0:
+                        result.append(asteroid)
+                        break
+                    else:
+                        top = result[n-1]
+                        
+        return result    
+                    
 sol1 = Solution()
-# print(sol1.asteroidCollision([5, 10, -5]))  
-# print(sol1.asteroidCollision([8, -8]))
-# print(sol1.asteroidCollision([10, 2, -5]))
-# print(sol1.asteroidCollision([-2,-1,1,2]))
-# print(sol1.asteroidCollision([-2,-2,1,-1]))
-print(sol1.asteroidCollision([-2,-2,1,-2]))
+print(sol1.asteroidCollision2([5, 10, -5]))  
+print(sol1.asteroidCollision2([8, -8]))
+print(sol1.asteroidCollision2([10, 2, -5]))
+print(sol1.asteroidCollision2([-2,-1,1,2]))
+print(sol1.asteroidCollision2([-2,-2,1,-1]))
+print(sol1.asteroidCollision2([-2,-2,1,-2]))
 
                     
                             
